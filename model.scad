@@ -4,6 +4,8 @@ okularDepth      = 18;
 materialThickness = 1;
 $fn=200;
 
+use <fillets3d.scad>
+
 module outer() {
     union() {
         cylinder(okularDepth,d=okularDiameter);
@@ -31,6 +33,7 @@ module inner() {
 
 }
 
+topBottomFillet(0,okularDepth,1,20,1)
 difference() {
     outer();
     inner();
