@@ -33,7 +33,7 @@ module inner() {
 
 }
 
-topBottomFillet(0,okularDepth,1,20,1)
+rotate([0,180,0]) topBottomFillet(0,okularDepth,1,20,1)
 difference() {
     outer();
     inner();
