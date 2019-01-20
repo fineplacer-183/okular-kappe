@@ -29,43 +29,6 @@ e = enabled (pass e = 0 to disable fillet for faster preview)
 
 enable = 1;
 
-// Example, hard edges
-translate([0, 20, 0])
-topBottomFillet(b = 0, t = 10, r = 2, s = 20, e = enable)
-linear_extrude(10, scale = 1.2)
-difference() {
-    union() {
-        square([10, 10], true);
-        translate([-15, 0]) circle(15);
-    }
-    translate([-15, 0]) circle(8);
-    translate([-15, 0]) square([13, 13], center = true);
-}
-
-// Example, soft edges
-use <fillets2d.scad>;
-translate([0, -20, 0])
-topBottomFillet(b = 0, t = 10, r = 1, s = 10, e = enable)
-linear_extrude(10)
-rounding2d(1)
-fillet2d(1)
-difference() {
-    union() {
-        square([10, 10], true);
-        translate([-15, 0]) circle(15);
-    }
-    translate([-15, 0]) circle(8);
-    translate([-15, 0]) square([13, 13], center = true);
-}
-
-
-// Example, text
-translate([-60, 40])
-rotate([0, 0, -90])
-topBottomFillet(b = 0, t = 3, r = .5, s = 5, e = enable)
-linear_extrude(3)
-text("Fillets!", size = 20);
-
 
 // Library
 
